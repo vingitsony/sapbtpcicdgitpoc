@@ -16,9 +16,23 @@ modules:
       - comsonyproject1.zip
       name: comsonyproject1
       target-path: resources/
+    - artifacts:
+      - comsonycustomerproject2.zip
+      name: comsonycustomerproject2
+      target-path: resources/
 - name: comsonyproject1
   type: html5
   path: project1
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: comsonycustomerproject2
+  type: html5
+  path: project2
   build-parameters:
     build-result: dist
     builder: custom
